@@ -1,7 +1,5 @@
-ghc
-===
-
 gephi-hadoop-connector
+======================
 
 Gephi is my tool of choice for graph visualization. And Hadoop stores all the data, especially the graph
 data, which is processed in Giraph. 

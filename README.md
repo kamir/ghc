@@ -15,3 +15,5 @@ If data is already partitioned by time the whole procedure is really efficient.
 How to handle all this metadata of a time dependent multilayer graph? 
 Therefore we use the Etosha-Graph-Metastore, which will be released soon.
 
+
+<b>Gephi is built on top of the NetBeans Application Framework. So the connector was also built as a NetBeans project</b>.

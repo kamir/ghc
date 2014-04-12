@@ -33,12 +33,35 @@
       <section id="main_content" class="inner">
         <h3>
 <a name="intro" class="anchor" href="#intro"><span class="octicon octicon-link"></span></a>Introduction</h3>
+<p>Gephi is my tool of choice for graph visualization. And Hadoop stores all the data, in HDFS or HBase, accessable directly,
+in Hive and HBase table, or via Impala in an SQL like style. Especially time dependent graph data can efficiently by partitioned
+with Hive and all the large processing is done in Apache Giraph.</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>But now I have to load data from Hadoop into Gephi. Creation of graph files and transfer to the workstation was done regularly.
+I had to repeat this steps manually all the time and important is, to remember the parameters which have been applied 
+during processing or generation of the graph. This became a critical aspect over time and manual handling of all the 
+files was not an option on the long term.</p>
+
+<p>So I created the <b>Gephi-Hadoop-Connector</b>, which uses the JDBC-Interface provided by Impala and Hive, to load edge- and node-lists.</p>
+
+<p>One really important feature in Gephi is: <i>it supports time dependent analysis and visualisation of networks.</i>
+To build such a timeline, an individual query can be defined for each single time frame of each individual layer.
+If data is already partitioned by time the whole procedure is really efficient.</p>
+
+<p>Finally we have to think about: <i></i>How to handle all this metadata of a time dependent multilayer graph?</i> 
+Therefore we use the Etosha-Graph-Metastore, which will be released soon.</p>
+
+
+<h3>
+<a name="qs" class="anchor" href="#qs"><span class="octicon octicon-link"></span></a>Quick-Start</h3>
+<p>
+Please clone this repository or download the zip file. <br/>
+You can check out the master branch:
+</p>
 
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
-$ git checkout gh-pages
+$ git checkout master
 </code></pre>
 
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>

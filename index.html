@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="gephi-hadoop-connector : gephi-hadoop-connector" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>gephi-hadoop-connector</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/kamir/ghc">View on GitHub</a>
+
+          <h1 id="project_title">Gephi-Hadoop-Connector</h1>
+          <h2 id="project_tagline">Load Time Dependent Multilayer Networks into Gephi</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/kamir/ghc/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/kamir/ghc/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="intro" class="anchor" href="#intro"><span class="octicon octicon-link"></span></a>Introduction</h3>
+<p>Gephi is my tool of choice for graph visualization. And Hadoop stores all the data, in HDFS or HBase, accessable directly,
+in Hive and HBase table, or via Impala in an SQL like style. Especially time dependent graph data can efficiently by partitioned
+with Hive and all the large processing is done in Apache Giraph.</p>
+
+<p>But now I have to load data from Hadoop into Gephi. Creation of graph files and transfer to the workstation was done regularly.
+I had to repeat this steps manually all the time and important is, to remember the parameters which have been applied 
+during processing or generation of the graph. This became a critical aspect over time and manual handling of all the 
+files was not an option on the long term.</p>
+
+<p>So I created the <b>Gephi-Hadoop-Connector</b>, which uses the JDBC-Interface provided by Impala and Hive, to load edge- and node-lists.</p>
+
+<p>One really important feature in Gephi is: <i>it supports time dependent analysis and visualisation of networks.</i>
+To build such a timeline, an individual query can be defined for each single time frame of each individual layer.
+If data is already partitioned by time the whole procedure is really efficient.</p>
+
+<p>Finally we have to think about: <i></i>How to handle all this metadata of a time dependent multilayer graph?</i> 
+Therefore we use the Etosha-Graph-Metastore, which will be released soon.</p>
+
+
+<h3>
+<a name="qs" class="anchor" href="#qs"><span class="octicon octicon-link"></span></a>Quick-Start</h3>
+<p>
+Please clone this repository or download the zip file. <br/>
+</p>
+
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>The Gephi-Hadoop-Connector was built by <a href="https://github.com/kamir" class="user-mention">@kamir</a>.</p>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">gephi-hadoop-connector maintained by <a href="https://github.com/kamir">kamir</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

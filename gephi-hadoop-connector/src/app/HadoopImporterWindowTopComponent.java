@@ -224,6 +224,11 @@ public final class HadoopImporterWindowTopComponent extends JFrame {
 
         edgesStatic.setText(org.openide.util.NbBundle.getMessage(HadoopImporterWindowTopComponent.class, "HadoopImporterWindowTopComponent.edgesStatic.text")); // NOI18N
         edgesStatic.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        edgesStatic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edgesStaticActionPerformed(evt);
+            }
+        });
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel3, org.openide.util.NbBundle.getMessage(HadoopImporterWindowTopComponent.class, "HadoopImporterWindowTopComponent.jLabel3.text")); // NOI18N
 
@@ -507,8 +512,7 @@ public final class HadoopImporterWindowTopComponent extends JFrame {
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -864,6 +868,10 @@ public final class HadoopImporterWindowTopComponent extends JFrame {
         jButton5ActionPerformed( null );
         
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void edgesStaticActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edgesStaticActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edgesStaticActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField edgesStatic;

@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>gephi-hadoop-connector</title>
+    <title>Gephi-Hadoop-Connector :: Version 2</title>
   </head>
 
   <body>
@@ -18,7 +18,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/kamir/ghc">View on GitHub</a>
 
-          <h1 id="project_title">Gephi-Hadoop-Connector</h1>
+          <h1 id="project_title">Gephi-Hadoop-Connector :: Version 2</h1>
           <h2 id="project_tagline">Load Time Dependent Multilayer Networks into Gephi</h2>
 
             <section id="downloads">
@@ -33,9 +33,15 @@
       <section id="main_content" class="inner">
         <h3>
 <a name="intro" class="anchor" href="#intro"><span class="octicon octicon-link"></span></a>Introduction</h3>
-<p>Gephi is my tool of choice for graph visualization. And Hadoop stores all the data, in HDFS or HBase, accessable directly,
-in Hive and HBase table, or via Impala in an SQL like style. Especially time dependent graph data can efficiently by partitioned
-with Hive and all the large processing is done in Apache Giraph.</p>
+          <p>Since <b>Gephi</b> is my tool of choice for graph visualization, and Hadoop stores all my data, in HDFS or HBase I created
+              a direct connector Hadoop and Gephi. Now all node and edge properties are accessable directly,
+              no matter if stored in Hive or HBase tables, via Impala we can request the data in <b>SQL-like</b> style. 
+              Especially time dependent graph data can now efficiently by partitioned
+with Hive and all the large processing is done in Hadoop. Gephi is not responsable for the large filter procedures and has only to hold
+in memory what realy has to be shown.</p>
+          
+          <p>Using GraphX in the cluster allows even large scale analysis on graphs which do not fit into the Workstations memory. After the results
+              are available, Gephi loads the relevant nodes and draws nice plots.</p>
 
 <p>But now I have to load data from Hadoop into Gephi. Creation of graph files and transfer to the workstation was done regularly.
 I had to repeat this steps manually all the time and important is, to remember the parameters which have been applied 

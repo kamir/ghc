@@ -25,10 +25,12 @@ Next, run the <i>bootstrap</i> script in the main folder.
 
 Now you can compile and package the project "gephi-plugins", and start the freshly build plugin using maven.
 
+```bash
   cd git-modules
   cd gephi-plugins
   mvn clean compile package -DskipTests
   mvn org.gephi:gephi-maven-plugin:run
+```
 
 Have fun with Gephi and all you huge graphs!
 

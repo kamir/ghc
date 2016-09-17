@@ -1,0 +1,15 @@
+[submodule "git-modules/access-impala"]
+	path = git-modules/access-impala
+	url = https://github.com/kamir/access-impala
+[submodule "git-modules/access-spark"]
+	path = git-modules/access-spark
+	url = https://github.com/kamir/access-spark
+[submodule "git-modules/access-search"]
+	path = git-modules/access-search
+	url = https://github.com/kamir/access-search
+[submodule "git-modules/gephi-plugins"]
+	path = git-modules/gephi-plugins
+	url = https://github.com/kamir/gephi-plugins
+[submodule "git-modules/fuseki-parcel"]
+	path = git-modules/fuseki-parcel
+	url = https://github.com/kamir/fuseki-parcel

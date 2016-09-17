@@ -1,26 +1,41 @@
-Gephi-Hadoop-Connector :: Version 2
+Gephi-Hadoop-Connector :: Version 5
 ===================================
 
-Gephi is my tool of choice for graph visualization. Hadoop stores all the data, especially the graph
-data, which is processed in GraphX or Apache Giraph. Now we need an integration between the tools running on the
-Workstation and the cluster. Loading a graph, just by a name in a well defined format to the workstation would be fine. Hadoop should filter the graph and before we load it, we should calculate some edge and node properties.
+Gephi is now available in version 0.9.1 with an optimized plugin mechanism. Since Gephi is my tool of choice for graph visualization and Hadoop stores all my data, especially the time series from which I generate the graph data, which is than  processed in GraphX (also using GraphFrames) I need a direct integration between Gephi and Hadoop. 
 
-We can also load the graph data from Hadoop into Gephi instead of manualy handling all the files. It worked well in the beginning, but on the long run this will be no solution
+##Some Background
+In general such an integration between analysis tools running on a workstation and the cluster which keeps the data is done on the file or file system level. This allows loading a graph from a remote location in a transparent way. Using APIs it possible to handle data on a more abstract level. A JDBC connector and an SQL query are used instead of a filename to get required node and edge data into Gephi.
 
-I created the Gephi-Hadoop-Connector, which uses the JDBC-Interface provided by Impalaand Hive, to load edge- and node-lists. It works also with SQL databases.
+The Gephi-Hadoop-Connector goes beyond that. First, you can use a file from HDFS to load edge and node data. Second, using a SQL query and the Impala connector allows you to filter huge graphs in Hadoop or even to merge multiple data sets on the fly, before you bring it into Gephi. Furthermore, the Apache Spark connector enables cluster side processing of graphs, which are to large for Gephi. 
 
-One important feature in Gephi is: it supports time dependent analysis and visualisation of networks.
-To build such a timeline, an individual query can be defined for each single time frame of each individual layer.
-If data is already partitioned by time the whole procedure is really efficient. 
+This direct interaction between Gephi and Hadoop clusters simplifies the task of network analysis.
 
-How to handle all this metadata of a time dependent multilayer graph? 
-Therefore we use the Etosha-Graph-Metastore, which will be released soon.
+Initially I created the Gephi-Hadoop-Connector just using a JDBC-Interface to use Hive and Impala. Now, we integrate the Etosha metadata toolbox for linking data sets and graph and metadata exposure to external tools.
 
-<b>Gephi is built on top of the NetBeans Application Framework. So the connector was also built as a NetBeans project</b>.
+Another important feature in Gephi is the support of time dependent graphs. This means, a topological analysis and visualisation of networks over time is possible in one tool while all the huge datasets still sit in a scalable environment.
+Build a timeline to present the topology of a complex systems becomes an easy task now. For each time interval, we can specify an individual query. In this way, even data from very different sources can be merged based on mappings included in the layer defining queries. This procedure becomes even more efficient, if data is already partitioned by time. Also the data slices, provided by Spark Streaming fit well into this framework.
 
-First you need the "Gephi-Plugins-Bootstrap" project. Please clone it or check it out from here:
+One important question is still: How do I handle a multilayer time dependent graph? There is a lot of metadata required.<b>The Etosha data link engine is created for this purpose.</b> 
 
-  https://github.com/kamir/gephi-plugins-bootcamp
+##Quickstart:
+In order to test this tool (we are currently in a POC status) you should clone this project including the sub-modules.
 
-Now you clone this project and you open it with NetBeans 7.4 or higher, and all dependencies for a CDH5 clusters are preconfigured.
+```bash
+  git clone https://github.com/kamir/ghc
+  cd ghc
+  git submodule update --init --recursive
+```
+
+Next, run the <i>bootstrap.sh</i> script in the main folder. It installs some jar files, not available in public repositories and prepares your system for building the tool. Now you can compile and package the project "gephi-plugins", and start the freshly build plugin using maven:
+
+```bash
+  cd git-modules
+  cd gephi-plugins
+  mvn clean compile package -DskipTests
+  mvn org.gephi:gephi-maven-plugin:run
+```
+
+The <i>run.sh</i> script in the main folder makes this step easy.
+
+Have fun with Gephi and all your huge graphs!
 

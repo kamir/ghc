@@ -21,7 +21,9 @@ One important question is still: How do I handle a multilayer time dependent gra
 In order to test this tool (we are currently in a POC status) you should clone this project including the sub-modules.
 Next, run the <i>bootstrap</i> script in the main folder.
 
+```bash
   git clone https://github.com/kamir/ghc
+```
 
 Now you can compile and package the project "gephi-plugins", and start the freshly build plugin using maven.
 
@@ -32,5 +34,5 @@ Now you can compile and package the project "gephi-plugins", and start the fresh
   mvn org.gephi:gephi-maven-plugin:run
 ```
 
-Have fun with Gephi and all you huge graphs!
+Have fun with Gephi and all your huge graphs!
 

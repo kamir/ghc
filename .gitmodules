@@ -13,3 +13,6 @@
 [submodule "git-modules/fuseki-parcel"]
 	path = git-modules/fuseki-parcel
 	url = https://github.com/kamir/fuseki-parcel
+[submodule "git-modules/spark-graph-generators"]
+	path = git-modules/spark-graph-generators
+	url = https://github.com/kamir/spark-graph-generators

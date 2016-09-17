@@ -22,6 +22,8 @@ In order to test this tool (we are currently in a POC status) you should clone t
 
 ```bash
   git clone https://github.com/kamir/ghc
+  cd ghc
+  git submodule update --init --recursive
 ```
 
 Next, run the <i>bootstrap.sh</i> script in the main folder. It installs some jar files, not available in public repositories and prepares your system for building the tool. Now you can compile and package the project "gephi-plugins", and start the freshly build plugin using maven:

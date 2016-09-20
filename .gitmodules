@@ -16,3 +16,6 @@
 [submodule "git-modules/spark-graph-generators"]
 	path = git-modules/spark-graph-generators
 	url = https://github.com/kamir/spark-graph-generators
+[submodule "git-modules/reference-data"]
+	path = git-modules/reference-data
+	url = https://kamir@github.com/kamir/etosha-data-calibration.git

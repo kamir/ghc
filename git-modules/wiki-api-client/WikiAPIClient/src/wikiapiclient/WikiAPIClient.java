@@ -73,26 +73,23 @@ public class WikiAPIClient {
         
         
         WikiORIGINAL w1 = new WikiORIGINAL();
-        WikiORIGINAL w2 = new WikiORIGINAL();
-//        
-//        String pageText = w.getPageText("Berlin");
-//        
-//        String[] links = w.getLinksOnPage("Berlin");
-//        System.out.println( links.length );
-//        
-//        HashMap<String,String> iwl = w.getInterWikiLinks("Berlin");
-//        System.out.println( iwl.size() );
 
-        w1 = new WikiORIGINAL("www.semanpix.de/oldtimer/", "wiki");
-        w2 = new WikiORIGINAL("www.semanpix.de/opendata/", "wiki");
+
+
+        WikiORIGINAL w2 = new WikiORIGINAL();
+
+        w2 = new WikiORIGINAL("www.semanpix.de/opendata/wiki", "");
         
-        //w1.login("kamir", "8cwrr");
-        //String pt1 = w1.getPageText("Main_Page");
-        
-        w2.login("kamir", "8cwrr");
+        // w2.login("kamir", "8cwrr");
         
         String pt2 = w2.getPageText("Main_Page");
-         
+
+        String[] links = w2.getLinksOnPage("Main_Page");
+        System.out.println( links.length );
+        
+        HashMap<String,String> iwl = w2.getInterWikiLinks("Main_Page");
+        System.out.println( iwl.size() );
+
     }
     
 }

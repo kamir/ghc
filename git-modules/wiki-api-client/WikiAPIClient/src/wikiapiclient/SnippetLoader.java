@@ -35,7 +35,7 @@ public class SnippetLoader {
 
             System.out.println(">>> Velocity-Snippet: " + name);
 
-                // String statuss = wiki.getPageInfo(name).toString();
+            // String statuss = wiki.getPageInfo(name).toString();
             s = wiki.getPageText(name);
 
             s = s.replace("<nowiki>", " ");
